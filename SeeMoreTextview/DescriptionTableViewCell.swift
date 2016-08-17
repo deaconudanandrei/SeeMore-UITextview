@@ -21,50 +21,32 @@ class DescriptionTableViewCell: UITableViewCell {
         didSet{
             // photo is an optional so we need to unwrap it
             if let photo = photo {
-                setupTextView(photo)
+                handleSeeMore(photo)
             }
         }
     }
     
-    func setupTextView(photo: Photo) {
+    func handleSeeMore(photo: Photo) {
         
-        // set the username, just as a text will do for now
-        let usernameAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaMedium, size: 12), NSForegroundColorAttributeName: UIColor.blackColor()]
-        let usernameAttributedString = NSMutableAttributedString(string: "\(photo.username) ", attributes: usernameAttributes)
+        let usernameContentAS = usernameContentAttributedString(photo)
         
-        // set the content
-        let contentAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaRegular, size: 12), NSForegroundColorAttributeName: UIColor.lightGrayColor()]
-        let contentAttributedString = NSMutableAttributedString(string: "\(photo.content) ", attributes: contentAttributes)
-        
-        
-        // this is where the magic begins
-        // if the content has more than or is equal to 140 characters
-        if photo.content.characters.count >= 140 {
-            // set dots
-            let dotsAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaRegular, size: 12), NSForegroundColorAttributeName: UIColor.lightGrayColor()]
-            let dotsAttributedString = NSMutableAttributedString(string: "... ", attributes: dotsAttributes)
+        if usernameContentAS.string.characters.count >= 140 {
             
-            // set see more button
-            let seeMoreButtonAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaRegular, size: 12), NSForegroundColorAttributeName: UIColor.grayColor()]
-            let seeMoreButton = NSMutableAttributedString(string: "See more", attributes: seeMoreButtonAttributes)
-            dotsAttributedString.appendAttributedString(seeMoreButton)
-            
+            let seeMoreButton = dotsSeeMore()
             
             // set the range of text you want people to see before See more apears
-            let range = NSRange(location: 140, length: photo.content.characters.count - 140)
+            let range = NSRange(location: 140, length: usernameContentAS.string.characters.count - 140)
             
             // append the dots and See more button
-            contentAttributedString.replaceCharactersInRange(range, withAttributedString: dotsAttributedString)
+            usernameContentAS.replaceCharactersInRange(range, withAttributedString: seeMoreButton)
             
             // Add tap gesture recognizer to Text View
             let tap = UITapGestureRecognizer(target: self, action: #selector(DescriptionTableViewCell.myMethodToHandleTap(_:)))
             tap.delegate = self
             textViewContent.addGestureRecognizer(tap)
         }
-        
-        // append the content attributed string
-        usernameAttributedString.appendAttributedString(contentAttributedString)
-        textViewContent.attributedText = usernameAttributedString
+
+        textViewContent.attributedText = usernameContentAS
         textViewContent.sizeToFit()
     }
     
@@ -95,18 +77,35 @@ class DescriptionTableViewCell: UITableViewCell {
             guard let delegate = delegate else {return}
             guard let photo = photo else {return}
             
-            // set the username, just as a text will do for now
-            let usernameAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaMedium, size: 12), NSForegroundColorAttributeName: UIColor.blackColor()]
-            let usernameAttributedString = NSMutableAttributedString(string: "\(photo.username) ", attributes: usernameAttributes)
+            let usernameContentAS = usernameContentAttributedString(photo)
             
-            // set the content
-            let contentAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaRegular, size: 12), NSForegroundColorAttributeName: UIColor.lightGrayColor()]
-            let contentAttributedString = NSMutableAttributedString(string: "\(photo.content) ", attributes: contentAttributes)
-            
-            usernameAttributedString.appendAttributedString(contentAttributedString)
-            textViewContent.attributedText = usernameAttributedString
+            textViewContent.attributedText = usernameContentAS
             delegate.textViewCell(self, didChangeText: textViewContent.attributedText)
         }
+    }
+    
+    // This is the full text with the username taken into account
+    func usernameContentAttributedString(photo: Photo) -> NSMutableAttributedString {
+        // set the username, just as a text will do for now
+        let usernameAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaMedium, size: 12), NSForegroundColorAttributeName: UIColor.blackColor()]
+        let usernameAttributedString = NSMutableAttributedString(string: "\(photo.username) ", attributes: usernameAttributes)
+        
+        // set the content
+        let contentAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaRegular, size: 12), NSForegroundColorAttributeName: UIColor.lightGrayColor()]
+        let contentAttributedString = NSMutableAttributedString(string: "\(photo.content)", attributes: contentAttributes)
+        
+        usernameAttributedString.appendAttributedString(contentAttributedString)
+        return usernameAttributedString
+    }
+    
+    // Dots and See more
+    func dotsSeeMore() -> NSMutableAttributedString {
+        
+        // set see more button
+        let seeMoreButtonAttributes = [NSFontAttributeName: Constant.setFont(Constant.HelveticaFonts.HelveticaRegular, size: 12), NSForegroundColorAttributeName: UIColor.grayColor()]
+        let seeMoreButton = NSMutableAttributedString(string: "... See more", attributes: seeMoreButtonAttributes)
+        
+        return seeMoreButton
     }
 
     override func awakeFromNib() {
