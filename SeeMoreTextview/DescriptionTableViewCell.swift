@@ -14,6 +14,7 @@ protocol TextViewCellDelegate {
 
 class DescriptionTableViewCell: UITableViewCell {
     
+    
     @IBOutlet weak var textViewContent: UITextView!
     var delegate: TextViewCellDelegate?
     
@@ -21,6 +22,7 @@ class DescriptionTableViewCell: UITableViewCell {
         didSet{
             // photo is an optional so we need to unwrap it
             if let photo = photo {
+                
                 handleSeeMore(photo)
             }
         }
@@ -117,6 +119,24 @@ class DescriptionTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // textview settings, you can set these in Interface Builder also
+        textViewContent.scrollEnabled = false
+        textViewContent.editable = false
+        textViewContent.bounces = false
+        textViewContent.showsHorizontalScrollIndicator = false
+        textViewContent.showsVerticalScrollIndicator = false
+        
+        // fixes blended color issues
+        for subview in textViewContent.subviews {
+            subview.backgroundColor = UIColor.whiteColor()
+        }
+        
+        
     }
 
 }
