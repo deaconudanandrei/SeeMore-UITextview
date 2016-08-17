@@ -14,6 +14,13 @@
 		11E072491D64430500D1F2BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E072471D64430500D1F2BE /* LaunchScreen.storyboard */; };
 		11E072541D64430500D1F2BE /* SeeMoreTextviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E072531D64430500D1F2BE /* SeeMoreTextviewTests.swift */; };
 		11E0725F1D64430500D1F2BE /* SeeMoreTextviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0725E1D64430500D1F2BE /* SeeMoreTextviewUITests.swift */; };
+		11E0726D1D64454000D1F2BE /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0726C1D64454000D1F2BE /* Photo.swift */; };
+		11E072721D6445ED00D1F2BE /* PhotoAndContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E072711D6445ED00D1F2BE /* PhotoAndContentTableViewCell.swift */; };
+		11E072751D6449A200D1F2BE /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E072741D6449A200D1F2BE /* Constant.swift */; };
+		11E072851D647E3100D1F2BE /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E072841D647E3100D1F2BE /* DescriptionTableViewCell.swift */; };
+		11E072871D6482B900D1F2BE /* BufferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E072861D6482B900D1F2BE /* BufferTableViewCell.swift */; };
+		11E0728B1D64873400D1F2BE /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E0728A1D64873400D1F2BE /* HeaderView.xib */; };
+		11E0728D1D6487D600D1F2BE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0728C1D6487D600D1F2BE /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		11E0725A1D64430500D1F2BE /* SeeMoreTextviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeeMoreTextviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E0725E1D64430500D1F2BE /* SeeMoreTextviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMoreTextviewUITests.swift; sourceTree = "<group>"; };
 		11E072601D64430500D1F2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11E0726C1D64454000D1F2BE /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		11E072711D6445ED00D1F2BE /* PhotoAndContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAndContentTableViewCell.swift; sourceTree = "<group>"; };
+		11E072741D6449A200D1F2BE /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		11E072841D647E3100D1F2BE /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		11E072861D6482B900D1F2BE /* BufferTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferTableViewCell.swift; sourceTree = "<group>"; };
+		11E0728A1D64873400D1F2BE /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		11E0728C1D6487D600D1F2BE /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +112,14 @@
 			isa = PBXGroup;
 			children = (
 				11E0723E1D64430500D1F2BE /* AppDelegate.swift */,
+				11E072731D64499100D1F2BE /* Extensions */,
 				11E072401D64430500D1F2BE /* ViewController.swift */,
+				11E0728A1D64873400D1F2BE /* HeaderView.xib */,
+				11E0728C1D6487D600D1F2BE /* HeaderView.swift */,
+				11E072711D6445ED00D1F2BE /* PhotoAndContentTableViewCell.swift */,
+				11E072841D647E3100D1F2BE /* DescriptionTableViewCell.swift */,
+				11E072861D6482B900D1F2BE /* BufferTableViewCell.swift */,
+				11E0726E1D6445B400D1F2BE /* Model */,
 				11E072421D64430500D1F2BE /* Main.storyboard */,
 				11E072451D64430500D1F2BE /* Assets.xcassets */,
 				11E072471D64430500D1F2BE /* LaunchScreen.storyboard */,
@@ -123,6 +144,22 @@
 				11E072601D64430500D1F2BE /* Info.plist */,
 			);
 			path = SeeMoreTextviewUITests;
+			sourceTree = "<group>";
+		};
+		11E0726E1D6445B400D1F2BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11E0726C1D64454000D1F2BE /* Photo.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		11E072731D64499100D1F2BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				11E072741D6449A200D1F2BE /* Constant.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +269,7 @@
 				11E072491D64430500D1F2BE /* LaunchScreen.storyboard in Resources */,
 				11E072461D64430500D1F2BE /* Assets.xcassets in Resources */,
 				11E072441D64430500D1F2BE /* Main.storyboard in Resources */,
+				11E0728B1D64873400D1F2BE /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +294,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11E0728D1D6487D600D1F2BE /* HeaderView.swift in Sources */,
+				11E072871D6482B900D1F2BE /* BufferTableViewCell.swift in Sources */,
+				11E072721D6445ED00D1F2BE /* PhotoAndContentTableViewCell.swift in Sources */,
+				11E0726D1D64454000D1F2BE /* Photo.swift in Sources */,
 				11E072411D64430500D1F2BE /* ViewController.swift in Sources */,
 				11E0723F1D64430500D1F2BE /* AppDelegate.swift in Sources */,
+				11E072751D6449A200D1F2BE /* Constant.swift in Sources */,
+				11E072851D647E3100D1F2BE /* DescriptionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeeMoreTextview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BadBoys.SeeMoreTextview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SeeMoreTextview/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BadBoys.SeeMoreTextview;
 				PRODUCT_NAME = "$(TARGET_NAME)";

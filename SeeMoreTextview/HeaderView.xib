@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeaderView" customModule="SeeMoreTextview" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXm-gg-D6o">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3E-kq-K82">
+                            <rect key="frame" x="8" y="8" width="32" height="32"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="9Pi-jj-nxn"/>
+                                <constraint firstAttribute="height" constant="32" id="coY-0b-2aA"/>
+                            </constraints>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwe-2j-e7R">
+                            <rect key="frame" x="48" y="8" width="45" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="FIW-Tw-mEZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                            <state key="normal" title="johndoe">
+                                <color key="titleColor" red="0.0" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="hwe-2j-e7R" firstAttribute="top" secondItem="UXm-gg-D6o" secondAttribute="top" constant="8" id="00W-QF-nyf"/>
+                        <constraint firstAttribute="height" constant="48" id="Cg2-Qn-em7"/>
+                        <constraint firstItem="a3E-kq-K82" firstAttribute="top" secondItem="UXm-gg-D6o" secondAttribute="top" constant="8" id="OSb-YK-uwb"/>
+                        <constraint firstItem="hwe-2j-e7R" firstAttribute="leading" secondItem="a3E-kq-K82" secondAttribute="trailing" constant="8" id="df4-Ew-huT"/>
+                        <constraint firstItem="a3E-kq-K82" firstAttribute="leading" secondItem="UXm-gg-D6o" secondAttribute="leading" constant="8" id="fke-Vp-Wcj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="UXm-gg-D6o" secondAttribute="trailing" id="4KW-bN-nyy"/>
+                <constraint firstItem="UXm-gg-D6o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Se0-PN-ibv"/>
+                <constraint firstItem="UXm-gg-D6o" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dSx-FF-wNy"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outlet property="buttonProfilePhoto" destination="a3E-kq-K82" id="gQM-fp-hii"/>
+                <outlet property="buttonUsername" destination="hwe-2j-e7R" id="FuK-gi-DpF"/>
+            </connections>
+        </view>
+    </objects>
+</document>
